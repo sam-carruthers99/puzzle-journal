@@ -1,0 +1,116 @@
+/* Base Layout */
+.hints-app {
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  font-family: "Baskerville Old Face";
+}
+
+.hints-container {
+  width: 100%;
+  max-width: 600px; /* Controls maximum content width */
+  align-content: center;
+}
+
+/* Header */
+.hints-title {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+}
+
+/* Sections */
+.page-section {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.page-section h2 {
+  color: #2c3e50;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* Hint/Solution Items */
+.hint-item,
+.solution-item {
+  margin: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* This centers the button */
+}
+
+.hint-toggle,
+.solution-toggle {
+  background-color: #040b0f;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 0.7rem 1rem;
+  font-family: "Berlin Sans FB";
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: 100%;
+  max-width: 200px;
+  margin: 0.5rem 0;
+}
+
+.hint-toggle:hover,
+.solution-toggle:hover {
+  background-color: #2980b9;
+  transform: translateY(-2px);
+}
+
+/* Content Boxes */
+.hint-content,
+.solution-content {
+  background-color: #f8f9fa;
+  padding: 1rem;
+  margin: 0.5rem 0;
+  border-radius: 6px;
+  border-left: 3px solid #3498db;
+  animation: fadeIn 0.3s ease;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: "Berlin Sans";
+}
+
+.solution-content {
+  border-left-color: #27ae60;
+  background-color: #e8f7ee;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .hints-container {
+    padding: 0.5rem;
+  }
+  
+  .page-section {
+    padding: 1rem;
+  }
+  
+  .hint-content,
+  .solution-content {
+    width: 90%;
+    padding: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hints-title {
+    font-size: 1.8rem;
+  }
+}

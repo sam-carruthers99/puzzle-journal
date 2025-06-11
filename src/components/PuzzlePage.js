@@ -1,9 +1,10 @@
 // src/components/PuzzlePage.js
 import { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import answers from '../answers';
+import answers from '../data/answers';
 import Navigation from './Navigation';
 import '../App.css'
+import HintButton from './HintButton'
 
 const incorrectMessages = [
   "Incorrect",
@@ -72,6 +73,7 @@ const PuzzlePage = () => {
   };
 
   return (
+    <div>
     <div className="puzzle-page">
       <h1>Page {puzzleId}</h1>
       
@@ -99,6 +101,11 @@ const PuzzlePage = () => {
         onNext={handleNext}
         onPrevious={handlePrevious}
       />
+
+      <HintButton />
+
+    </div>
+    
     </div>
   );
 };
